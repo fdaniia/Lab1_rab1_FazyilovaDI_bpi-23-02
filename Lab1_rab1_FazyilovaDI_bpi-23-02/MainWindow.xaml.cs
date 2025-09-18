@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
 using System.Linq;
@@ -16,29 +16,28 @@ using System.Windows.Shapes;
 
 
 namespace Lab1_rab1_FazyilovaDI_bpi_23_02
-{
-  
+{  
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Numbers numbers { get; set; }
-
-        
+        public Numbers numbers { get; set; }        
         public MainWindow()
         {
             InitializeComponent();
         }
-
-        private void ArithmeticMean_Click(object sender, RoutedEventArgs e)
+        public Numbers num ()
         {
-           
+            if (string.IsNullOrWhiteSpace(aTextBox.Text) || string.IsNullOrWhiteSpace(bTextBox.Text) || string.IsNullOrWhiteSpace(cTextBox.Text) || string.IsNullOrWhiteSpace(dTextBox.Text))
+            {
+                MessageBox.Show("введите все числа");
+                return null;
+            }
             int a = int.Parse(aTextBox.Text);
             int b = int.Parse(bTextBox.Text);
             int c = int.Parse(cTextBox.Text);
             int d = int.Parse(dTextBox.Text);
-
             if (numbers == null) numbers = new Numbers(a, b, c, d);
             else
             {
@@ -47,29 +46,26 @@ namespace Lab1_rab1_FazyilovaDI_bpi_23_02
                 numbers.C = c;
                 numbers.D = d;
             }
-
-            double mean = numbers.ArithmeticMean();
-                meanTextBox.Text = mean.ToString("F2");           
+            return numbers;
+        }
+        private void ArithmeticMean_Click(object sender, RoutedEventArgs e)
+        {
+            Numbers n = num();
+            if (n != null)
+            {
+                double mean = n.ArithmeticMean();
+                meanTextBox.Text = mean.ToString("F2");
+            }
         }
         private void MaxNumber_Click(object sender, RoutedEventArgs e)
         {
-
-            int a = int.Parse(aTextBox.Text);
-            int b = int.Parse(bTextBox.Text);
-            int c = int.Parse(cTextBox.Text);
-            int d = int.Parse(dTextBox.Text);
-            if (numbers == null) numbers = new Numbers(a, b, c, d);
-                else
-                {
-                    numbers.A = a;
-                    numbers.B = b;
-                    numbers.C = c;
-                    numbers.D= d;
-                } 
-                int max = numbers.MaxNumber();
+           Numbers n = num();
+            if (n != null)
+            {
+                int max = n.MaxNumber();
                 maxTextBox.Text = max.ToString();
-         }
-       
+            }
+         }       
         private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             foreach (char c in e.Text)

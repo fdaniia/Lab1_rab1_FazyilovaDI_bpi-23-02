@@ -34,6 +34,11 @@ namespace Lab1_rab1_FazyilovaDI_bpi_23_02
                 MessageBox.Show("введите все числа");
                 return null;
             }
+            if (aTextBox.Text.Trim() == "-" || bTextBox.Text.Trim() == "-" || cTextBox.Text.Trim() == "-" || dTextBox.Text.Trim() == "-")
+            {
+                MessageBox.Show("введите числа, а не только знак");
+                return null;
+            }
             int a = int.Parse(aTextBox.Text);
             int b = int.Parse(bTextBox.Text);
             int c = int.Parse(cTextBox.Text);
@@ -46,7 +51,7 @@ namespace Lab1_rab1_FazyilovaDI_bpi_23_02
                 numbers.C = c;
                 numbers.D = d;
             }
-            return numbers;
+            return numbers;            
         }
         private void ArithmeticMean_Click(object sender, RoutedEventArgs e)
         {
@@ -68,6 +73,16 @@ namespace Lab1_rab1_FazyilovaDI_bpi_23_02
          }       
         private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
+            var textBox = sender as TextBox;
+            if (textBox == null) return;
+            if (e.Text == "-")
+            {
+                if (textBox.Text.Contains('-') || textBox.CaretIndex != 0)
+                {
+                    e.Handled = true;
+                }
+                return;
+            }
             foreach (char c in e.Text)
             {
                 if (!char.IsDigit(c) )

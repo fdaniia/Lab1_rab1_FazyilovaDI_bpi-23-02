@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab1_rab1_FazyilovaDI_bpi_23_02"
         mc:Ignorable="d"
-        Title="4 целых числа" Height="400" Width="400" MinHeight="150" MinWidth="150">
+        Title="4 целых числа" Height="250" Width="400" MinHeight="150" MinWidth="150">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />

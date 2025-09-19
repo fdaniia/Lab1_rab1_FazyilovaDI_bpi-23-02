@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab1_rab1_FazyilovaDI_bpi_23_02"
         mc:Ignorable="d"
-        Title="4 целых числа" Height="400" Width="400">
+        Title="4 целых числа" Height="400" Width="400" MinHeight="150" MinWidth="150">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -29,8 +29,8 @@
         <TextBox x:Name="cTextBox" Grid.Row="2" Grid.Column="1" Width="200" PreviewTextInput="TextBox_PreviewTextInput" PreviewKeyDown="TextBox_PreviewKeyDown"/>
         <Label Content="d" Grid.Row="3" Grid.Column="0" />
         <TextBox x:Name="dTextBox" Grid.Row="3" Grid.Column="1" Width="200" PreviewTextInput="TextBox_PreviewTextInput" PreviewKeyDown="TextBox_PreviewKeyDown"/>
-        <Button Content="среднее арифметическое" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan=" 2" Click="ArithmeticMean_Click" />
-        <Button Content="максимальное число" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan=" 2" Click="MaxNumber_Click" />
+        <Button Content="среднее арифметическое" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan=" 2" Click="ArithmeticMean_Click" Width="250" />
+        <Button Content="максимальное число" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan=" 2" Click="MaxNumber_Click" Width="250" />
         <Label Content="среднее арифметическое" Grid.Row="6" Grid.Column="0"  />
         <TextBox x:Name="meanTextBox" Grid.Row="6" Grid.Column="1" Width="200" IsEnabled="False" />
         <Label Content="максимальное число" Grid.Row="7" Grid.Column="0"  />

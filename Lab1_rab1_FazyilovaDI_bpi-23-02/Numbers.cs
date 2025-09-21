@@ -51,9 +51,5 @@ namespace Lab1_rab1_FazyilovaDI_bpi_23_02
             if (D > max) max = D;
             return max;
         }
-        public override string ToString()
-        {
-            return $"числа {A}, {B}, {C}, {D}";
-        }
     }
 }

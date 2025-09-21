@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.SqlServer.Server;
 
 
 namespace Lab1_rab1_FazyilovaDI_bpi_23_02
@@ -27,18 +28,35 @@ namespace Lab1_rab1_FazyilovaDI_bpi_23_02
         {
             InitializeComponent();
         }
+        private bool Proverka(TextBox textBox, string ABCD)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    MessageBox.Show($"'{ABCD}' не может быть пустым");
+                    return false;
+                }
+                if (textBox.Text.Trim() == "-")
+                {
+                    MessageBox.Show($"'{ABCD}' введите число, а не только знак");
+                    return false;
+                }
+                int.Parse(textBox.Text);
+                return true;
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show($"'{ABCD}' некорретный ввод");
+                return false;
+            }
+        } 
         public Numbers num ()
         {
-            if (string.IsNullOrWhiteSpace(aTextBox.Text) || string.IsNullOrWhiteSpace(bTextBox.Text) || string.IsNullOrWhiteSpace(cTextBox.Text) || string.IsNullOrWhiteSpace(dTextBox.Text))
-            {
-                MessageBox.Show("введите все числа");
-                return null;
-            }
-            if (aTextBox.Text.Trim() == "-" || bTextBox.Text.Trim() == "-" || cTextBox.Text.Trim() == "-" || dTextBox.Text.Trim() == "-")
-            {
-                MessageBox.Show("введите числа, а не только знак");
-                return null;
-            }
+            if (!Proverka(aTextBox, "A")) return null;
+            if (!Proverka(bTextBox, "B")) return null;
+            if (!Proverka(cTextBox, "C")) return null;
+            if (!Proverka(dTextBox, "D")) return null;
             int a = int.Parse(aTextBox.Text);
             int b = int.Parse(bTextBox.Text);
             int c = int.Parse(cTextBox.Text);

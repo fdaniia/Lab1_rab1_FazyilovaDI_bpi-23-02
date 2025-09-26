@@ -51,7 +51,7 @@ namespace Lab1_rab1_FazyilovaDI_bpi_23_02
                 return false;
             }
         } 
-        public Numbers num ()
+        public Numbers Num ()
         {
             if (!proverka(aTextBox, "a")) return null;
             if (!proverka(bTextBox, "b")) return null;
@@ -73,7 +73,7 @@ namespace Lab1_rab1_FazyilovaDI_bpi_23_02
         }
         private void arithmeticMean_Click(object sender, RoutedEventArgs e)
         {
-            Numbers n = num();
+            Numbers n = Num();
             if (n != null)
             {
                 double mean = n.ArithmeticMean();
@@ -82,7 +82,7 @@ namespace Lab1_rab1_FazyilovaDI_bpi_23_02
         }
         private void maxNumber_Click(object sender, RoutedEventArgs e)
         {
-           Numbers n = num();
+           Numbers n = Num();
             if (n != null)
             {
                 int max = n.MaxNumber();

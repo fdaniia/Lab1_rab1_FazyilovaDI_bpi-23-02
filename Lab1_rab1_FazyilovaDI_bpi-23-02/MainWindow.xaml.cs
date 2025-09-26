@@ -53,10 +53,10 @@ namespace Lab1_rab1_FazyilovaDI_bpi_23_02
         } 
         public Numbers num ()
         {
-            if (!Proverka(aTextBox, "a")) return null;
-            if (!Proverka(bTextBox, "b")) return null;
-            if (!Proverka(cTextBox, "c")) return null;
-            if (!Proverka(dTextBox, "d")) return null;
+            if (!proverka(aTextBox, "a")) return null;
+            if (!proverka(bTextBox, "b")) return null;
+            if (!proverka(cTextBox, "c")) return null;
+            if (!proverka(dTextBox, "d")) return null;
             int a = int.Parse(aTextBox.Text);
             int b = int.Parse(bTextBox.Text);
             int c = int.Parse(cTextBox.Text);

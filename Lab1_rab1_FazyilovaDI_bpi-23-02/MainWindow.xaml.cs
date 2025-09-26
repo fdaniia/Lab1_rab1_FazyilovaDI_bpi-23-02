@@ -28,18 +28,18 @@ namespace Lab1_rab1_FazyilovaDI_bpi_23_02
         {
             InitializeComponent();
         }
-        private bool Proverka(TextBox textBox, string ABCD)
+        private bool proverka(TextBox textBox, string ABCD)
         {
             try
             {
                 if (string.IsNullOrWhiteSpace(textBox.Text))
                 {
-                    MessageBox.Show($"'{ABCD}' не может быть пустым");
+                    MessageBox.Show($"{ABCD} не может быть пустым");
                     return false;
                 }
                 if (textBox.Text.Trim() == "-")
                 {
-                    MessageBox.Show($"'{ABCD}' введите число, а не только знак");
+                    MessageBox.Show($"{ABCD} введите число, а не только знак");
                     return false;
                 }
                 int.Parse(textBox.Text);
@@ -47,16 +47,16 @@ namespace Lab1_rab1_FazyilovaDI_bpi_23_02
             }
             catch (FormatException)
             {
-                MessageBox.Show($"'{ABCD}' некорретный ввод");
+                MessageBox.Show($"{ABCD} некорретный ввод");
                 return false;
             }
         } 
         public Numbers num ()
         {
-            if (!Proverka(aTextBox, "A")) return null;
-            if (!Proverka(bTextBox, "B")) return null;
-            if (!Proverka(cTextBox, "C")) return null;
-            if (!Proverka(dTextBox, "D")) return null;
+            if (!Proverka(aTextBox, "a")) return null;
+            if (!Proverka(bTextBox, "b")) return null;
+            if (!Proverka(cTextBox, "c")) return null;
+            if (!Proverka(dTextBox, "d")) return null;
             int a = int.Parse(aTextBox.Text);
             int b = int.Parse(bTextBox.Text);
             int c = int.Parse(cTextBox.Text);
@@ -71,7 +71,7 @@ namespace Lab1_rab1_FazyilovaDI_bpi_23_02
             }
             return numbers;            
         }
-        private void ArithmeticMean_Click(object sender, RoutedEventArgs e)
+        private void arithmeticMean_Click(object sender, RoutedEventArgs e)
         {
             Numbers n = num();
             if (n != null)
@@ -80,7 +80,7 @@ namespace Lab1_rab1_FazyilovaDI_bpi_23_02
                 meanTextBox.Text = mean.ToString("F2");
             }
         }
-        private void MaxNumber_Click(object sender, RoutedEventArgs e)
+        private void maxNumber_Click(object sender, RoutedEventArgs e)
         {
            Numbers n = num();
             if (n != null)
@@ -89,7 +89,7 @@ namespace Lab1_rab1_FazyilovaDI_bpi_23_02
                 maxTextBox.Text = max.ToString();
             }
          }       
-        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        private void textBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             var textBox = sender as TextBox;
             if (textBox == null) return;
@@ -110,7 +110,7 @@ namespace Lab1_rab1_FazyilovaDI_bpi_23_02
                 }
             }
         }
-        private void TextBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        private void textBox_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Space) e.Handled = true;
         }

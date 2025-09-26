@@ -51,7 +51,25 @@ namespace Lab1_rab1_FazyilovaDI_bpi_23_02
                 return false;
             }
         } 
-        public Numbers Num ()
+        public Numbers AA (string q, TextBox textBox)
+        {
+            if (!proverka(textBox, q)) return null;
+            int value = int.Parse(textBox.Text);
+            if (numbers == null) numbers = new Numbers(0, 0 , 0 , 0);
+            switch (q.ToLower())
+            {
+                case "a": numbers.A = value; break;
+                case "b": numbers.B = value; break;
+                case "c": numbers.C = value; break;
+                case "d": numbers.D = value; break;
+            }          
+            return numbers;            
+        }
+        public Numbers Check(string q, TextBox textBox)
+        {
+            return AA(q, textBox);
+        }
+        public Numbers Num()
         {
             if (!proverka(aTextBox, "a")) return null;
             if (!proverka(bTextBox, "b")) return null;
@@ -69,15 +87,15 @@ namespace Lab1_rab1_FazyilovaDI_bpi_23_02
                 numbers.C = c;
                 numbers.D = d;
             }
-            return numbers;            
-        }
+            return numbers;
+        } 
         private void arithmeticMean_Click(object sender, RoutedEventArgs e)
         {
             Numbers n = Num();
             if (n != null)
             {
                 double mean = n.ArithmeticMean();
-                meanTextBox.Text = mean.ToString("F2");
+                meanTextBox.Text = mean.ToString();
             }
         }
         private void maxNumber_Click(object sender, RoutedEventArgs e)

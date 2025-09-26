@@ -22,7 +22,13 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Label Content="a" Grid.Row="0" Grid.Column="0" />
-        <TextBox x:Name="aTextBox" Grid.Row="0" Grid.Column="1" Width="200"  PreviewTextInput="textBox_PreviewTextInput" PreviewKeyDown="textBox_PreviewKeyDown"/>
+        <TextBox x:Name="aTextBox"
+                 Grid.Row="0"
+                 Grid.Column="1"
+                 Width="200"  
+                 PreviewTextInput="textBox_PreviewTextInput"
+                  ToolTip="gggjj"
+                 PreviewKeyDown="textBox_PreviewKeyDown"/>
         <Label Content="b" Grid.Row="1" Grid.Column="0" />
         <TextBox x:Name="bTextBox" Grid.Row="1" Grid.Column="1" Width="200" PreviewTextInput="textBox_PreviewTextInput" PreviewKeyDown="textBox_PreviewKeyDown"/>
         <Label Content="c" Grid.Row="2" Grid.Column="0" />

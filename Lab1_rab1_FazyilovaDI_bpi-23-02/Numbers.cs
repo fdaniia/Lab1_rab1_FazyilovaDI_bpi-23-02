@@ -12,6 +12,7 @@ namespace Lab1_rab1_FazyilovaDI_bpi_23_02
         private int b;
         private int c;
         private int d;
+        //private bool flag;
         public int A
         {
             get { return a; }
@@ -32,6 +33,11 @@ namespace Lab1_rab1_FazyilovaDI_bpi_23_02
             get { return d; }
             set { d = value; }
         }
+       /* public bool Flag
+        {
+            get { return flag; }
+            set { flag = value; }
+        } */
         public Numbers( int a, int b, int c, int d)
         {
             A = a;

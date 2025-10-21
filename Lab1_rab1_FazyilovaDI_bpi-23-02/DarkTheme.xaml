@@ -4,7 +4,7 @@
     <SolidColorBrush x:Key="TextBoxBackgroundBrush" Color="DarkSlateBlue"/>
     <SolidColorBrush x:Key="TextBoxBorderBrush" Color="DarkSlateBlue"/>
     <SolidColorBrush x:Key="ButtonBackgroundBrush" Color="DarkBlue"/>
-    <SolidColorBrush x:Key="ButtonHoverBrush" Color="RoyalBlue"/>
+    <SolidColorBrush x:Key="ButtonHoverBrush" Color="BlueViolet"/>
     <SolidColorBrush x:Key="TextBrush" Color="White"/>
     <SolidColorBrush x:Key="TextBoxHoverBorderBrush" Color="SaddleBrown"/>
 
@@ -17,15 +17,14 @@
         <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderBrush}"/>
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Padding" Value="4"/>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="BorderBrush" Value="{DynamicResource TextBoxHoverBorderBrush}"/>
-                <Setter Property="BorderThickness" Value="3"/>
+                <Setter Property="BorderThickness" Value="1"/>
             </Trigger>
             <Trigger Property="IsFocused" Value="True">
                 <Setter Property="BorderBrush" Value="{DynamicResource TextBoxHoverBorderBrush}"/>
-                <Setter Property="BorderThickness" Value="3"/>
+                <Setter Property="BorderThickness" Value="1"/>
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -36,25 +35,23 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border x:Name="border" Background="{TemplateBinding Background}" 
+                    <Border x:Name="border" 
+                            Background="{TemplateBinding Background}" 
                             BorderBrush="{TemplateBinding BorderBrush}" 
                             BorderThickness="{TemplateBinding BorderThickness}" 
                             SnapsToDevicePixels="true">
-                        <ContentPresenter x:Name="contentPresenter" Focusable="False"
-                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                        Margin="{TemplateBinding Padding}"
-                                        RecognizesAccessKey="True"
-                                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Background" TargetName="border" Value="{DynamicResource ButtonHoverColor}"/>
-                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource ButtonHoverColor}"/>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource ButtonHoverBrush}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource ButtonHoverBrush}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
-                            <Setter Property="Background" TargetName="border" Value="{DynamicResource ButtonBackgroundColor}"/>
-                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource ButtonBackgroundColor}"/>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource ButtonBackgroundBrush}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource ButtonBackgroundBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

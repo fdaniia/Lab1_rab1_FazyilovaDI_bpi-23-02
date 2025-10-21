@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab1_rab1_FazyilovaDI_bpi_23_02"
         mc:Ignorable="d"
-        Title="4 целых числа" Height="250" Width="400" MinHeight="150" MinWidth="150">
+        Title="4 целых числа" Height="250" Width="400" MinHeight="200" MinWidth="350">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -21,25 +22,27 @@
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Label Content="a" Grid.Row="0" Grid.Column="0" />
+        <Button x:Name="ThemeToggleButton" Content="темная тема" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
+                HorizontalAlignment="Right" Click="ThemeToggleButton_Click" />
+        <Label Content="a" Grid.Row="1" Grid.Column="0" />
         <TextBox x:Name="aTextBox"
-                 Grid.Row="0"
+                 Grid.Row="1"
                  Grid.Column="1"
                  Width="200"  
                  PreviewTextInput="textBox_PreviewTextInput"
                   ToolTip="gggjj"
                  PreviewKeyDown="textBox_PreviewKeyDown"/>
-        <Label Content="b" Grid.Row="1" Grid.Column="0" />
-        <TextBox x:Name="bTextBox" Grid.Row="1" Grid.Column="1" Width="200" PreviewTextInput="textBox_PreviewTextInput" PreviewKeyDown="textBox_PreviewKeyDown"/>
-        <Label Content="c" Grid.Row="2" Grid.Column="0" />
-        <TextBox x:Name="cTextBox" Grid.Row="2" Grid.Column="1" Width="200" PreviewTextInput="textBox_PreviewTextInput" PreviewKeyDown="textBox_PreviewKeyDown"/>
-        <Label Content="d" Grid.Row="3" Grid.Column="0" />
-        <TextBox x:Name="dTextBox" Grid.Row="3" Grid.Column="1" Width="200" PreviewTextInput="textBox_PreviewTextInput" PreviewKeyDown="textBox_PreviewKeyDown"/>
-        <Button Content="среднее арифметическое" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan=" 2" Click="arithmeticMean_Click" Width="200" />
-        <Button Content="максимальное число" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan=" 2" Click="maxNumber_Click" Width="200" />
-        <Label Content="среднее арифметическое" Grid.Row="6" Grid.Column="0"  />
-        <TextBox x:Name="meanTextBox" Grid.Row="6" Grid.Column="1" Width="200" IsEnabled="False" />
-        <Label Content="максимальное число" Grid.Row="7" Grid.Column="0"  />
-        <TextBox x:Name="maxTextBox" Grid.Row="7" Grid.Column="1" Width="200" IsEnabled="False" />
+        <Label Content="b" Grid.Row="2" Grid.Column="0" />
+        <TextBox x:Name="bTextBox" Grid.Row="2" Grid.Column="1" Width="200" PreviewTextInput="textBox_PreviewTextInput" PreviewKeyDown="textBox_PreviewKeyDown"/>
+        <Label Content="c" Grid.Row="3" Grid.Column="0" />
+        <TextBox x:Name="cTextBox" Grid.Row="3" Grid.Column="1" Width="200" PreviewTextInput="textBox_PreviewTextInput" PreviewKeyDown="textBox_PreviewKeyDown"/>
+        <Label Content="d" Grid.Row="4" Grid.Column="0" />
+        <TextBox x:Name="dTextBox" Grid.Row="4" Grid.Column="1" Width="200" PreviewTextInput="textBox_PreviewTextInput" PreviewKeyDown="textBox_PreviewKeyDown"/>
+        <Button Content="среднее арифметическое" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan=" 2" Click="arithmeticMean_Click" Width="200" />
+        <Button Content="максимальное число" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan=" 2" Click="maxNumber_Click" Width="200" />
+        <Label Content="среднее арифметическое" Grid.Row="7" Grid.Column="0"  />
+        <TextBox x:Name="meanTextBox" Grid.Row="7" Grid.Column="1" Width="200" IsEnabled="False" />
+        <Label Content="максимальное число" Grid.Row="8" Grid.Column="0"  />
+        <TextBox x:Name="maxTextBox" Grid.Row="8" Grid.Column="1" Width="200" IsEnabled="False" />
     </Grid>
 </Window>

@@ -23,10 +23,12 @@ namespace Lab1_rab1_FazyilovaDI_bpi_23_02
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Numbers numbers { get; set; }        
+        public Numbers numbers { get; set; }
+        private bool isDarkTheme = false;
         public MainWindow()
         {
             InitializeComponent();
+            ApplyLightTheme();
         }
         private bool proverka(TextBox textBox, string ABCD)
         {
@@ -131,6 +133,28 @@ namespace Lab1_rab1_FazyilovaDI_bpi_23_02
         private void textBox_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Space) e.Handled = true;
+        }
+        private void ThemeToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            isDarkTheme = !isDarkTheme;
+            if (isDarkTheme) ApplyDarkTheme();
+            else ApplyLightTheme(); 
+        }
+        private void ApplyLightTheme()
+        {
+            var uri = new Uri("LightTheme.xaml", UriKind.Relative);
+            ResourceDictionary resourceDict = Application.LoadComponent(uri) as ResourceDictionary;
+            Application.Current.Resources.MergedDictionaries.Clear();
+            Application.Current.Resources.MergedDictionaries.Add(resourceDict);
+            ThemeToggleButton.Content = "темная тема";
+        }
+        private void ApplyDarkTheme()
+        {
+            var uri = new Uri("DarkTheme.xaml", UriKind.Relative);
+            ResourceDictionary resourceDict = Application.LoadComponent(uri) as ResourceDictionary;
+            Application.Current.Resources.MergedDictionaries.Clear();
+            Application.Current.Resources.MergedDictionaries.Add(resourceDict);
+            ThemeToggleButton.Content = "светлая тема";
         }
     }
 

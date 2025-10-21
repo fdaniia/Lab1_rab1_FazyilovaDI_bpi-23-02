@@ -2,10 +2,11 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <SolidColorBrush x:Key="WindowBackgroundBrush" Color="DarkSlateGray"/>
     <SolidColorBrush x:Key="TextBoxBackgroundBrush" Color="DarkSlateBlue"/>
-    <SolidColorBrush x:Key="TextBoxBorderBrush" Color="SaddleBrown"/>
+    <SolidColorBrush x:Key="TextBoxBorderBrush" Color="DarkSlateBlue"/>
     <SolidColorBrush x:Key="ButtonBackgroundBrush" Color="DarkBlue"/>
     <SolidColorBrush x:Key="ButtonHoverBrush" Color="RoyalBlue"/>
     <SolidColorBrush x:Key="TextBrush" Color="White"/>
+    <SolidColorBrush x:Key="TextBoxHoverBorderBrush" Color="SaddleBrown"/>
 
     <Style TargetType="{x:Type Window}">
         <Setter Property="Background" Value="{DynamicResource WindowBackgroundBrush}"/>
@@ -16,6 +17,17 @@
         <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderBrush}"/>
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="4"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="BorderBrush" Value="{DynamicResource TextBoxHoverBorderBrush}"/>
+                <Setter Property="BorderThickness" Value="3"/>
+            </Trigger>
+            <Trigger Property="IsFocused" Value="True">
+                <Setter Property="BorderBrush" Value="{DynamicResource TextBoxHoverBorderBrush}"/>
+                <Setter Property="BorderThickness" Value="3"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
     <Style TargetType="{x:Type Button}">
         <Setter Property="Background" Value="{DynamicResource ButtonBackgroundBrush}"/>
@@ -52,5 +64,8 @@
     <Style TargetType="{x:Type Label}">
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
         <Setter Property="Background" Value="Transparent"/>
+    </Style>
+    <Style TargetType="{x:Type Grid}">
+        <Setter Property="Background" Value="{DynamicResource WindowBackgroundBrush}"/>
     </Style>
 </ResourceDictionary>
